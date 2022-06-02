@@ -27,5 +27,5 @@ namespace CSharp05Group
                 Console.WriteLine(test);  
             }
         }
-    }v
+    }
 }
