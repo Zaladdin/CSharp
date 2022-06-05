@@ -1,0 +1,1 @@
+Daxil edilmish yashin muqayisesi
