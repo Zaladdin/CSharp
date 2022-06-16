@@ -1,2 +1,2 @@
 
-Arrayin boyuk ve kicik elementi
+Arrayin boyuk elementini ve onun indeksini cixaran progr
