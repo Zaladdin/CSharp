@@ -1,6 +1,6 @@
 # CSharp
 
-[Arr](https://github.com/Zaladdin/CSharp/tree/main/Programs/Arr)
+[Arr](https://github.com/Zaladdin/CSharp/blob/main/Programs/Arr/Program.cs)
 
 [ArrSort - otsortirovanniy massiv](https://github.com/Zaladdin/CSharp/blob/main/Programs/ArrSort/Program.cs)
 
