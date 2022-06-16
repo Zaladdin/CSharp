@@ -1,1 +1,2 @@
 
+Arrayin elementlerinin kvadrati
