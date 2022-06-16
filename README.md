@@ -18,3 +18,7 @@
 
 [MathSqrt -  Ededin koku](https://github.com/Zaladdin/CSharp/blob/main/Programs/MathSqrt/Program.cs)
 
+[MaxArr - Arrayin boyuk ve kicik elementi](https://github.com/Zaladdin/CSharp/blob/main/Programs/MaxArr/Program.cs)
+
+[MaxMinSumVal - Ededlerin arasında reqemlerinin cemi en boyuk ve en kicik olan eded](https://github.com/Zaladdin/CSharp/blob/main/Programs/MaxMinSumVal/Program.cs)
+
