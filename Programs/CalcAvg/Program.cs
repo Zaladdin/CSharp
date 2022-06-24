@@ -24,10 +24,11 @@ namespace CalcAvg
 			
 			
 		}
-			Console.WriteLine("qiymetlerin ortalamasi");
 			
 			Console.WriteLine(CalcAvg(arr1));
 		
+
+			
 		
 	
 		
@@ -45,9 +46,21 @@ namespace CalcAvg
 			}
 			res = sum/arr.Length;
 		
-			return res;
-			Console.WriteLine(res);
 			
+			
+			
+			
+			if(res>60)
+			{
+				Console.WriteLine("mezun oldunuz");
+				
+			}
+			else
+			{
+				Console.WriteLine("mezun olmadiz");
+			}
+			Console.WriteLine("qiymetlerin ortalamasi");
+			return res;
 		}
 	}
 }
