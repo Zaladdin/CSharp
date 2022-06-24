@@ -1,5 +1,16 @@
 # CSharp
 
+Yeni Tasklar
+
+[FindCharIndex](https://github.com/Zaladdin/CSharp/blob/main/Programs/FindCharIndex/Program.cs)
+
+
+
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - 
+
 [Arr](https://github.com/Zaladdin/CSharp/blob/main/Programs/Arr/Program.cs)
 
 [ArrSort - otsortirovanniy massiv](https://github.com/Zaladdin/CSharp/blob/main/Programs/ArrSort/Program.cs)
