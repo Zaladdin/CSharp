@@ -5,6 +5,7 @@ Yeni Tasklar
 [FindCharIndex - herfin sözün icinde olub olmamagini yoxlayan program](https://github.com/Zaladdin/CSharp/blob/main/Programs/FindCharIndex/Program.cs)
 
 [IsPrime - ededin sade eded olub olmamagini yoxlayan program](https://github.com/Zaladdin/CSharp/blob/main/Programs/IsPrime/Program.cs)
+
 [CalcAvg - verilmis fenn sayına gore daxil edilmis qiymetlerin ortalamasi na uygun mezun olub olmamagini yoxlayan program](https://github.com/Zaladdin/CSharp/blob/main/Programs/CalcAvg/Program.cs)
 
 
