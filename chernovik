@@ -1,0 +1,262 @@
+using System;
+namespace Lesson10CSharp
+{
+    internal class Program
+    {
+        public static void Main()
+        {
+
+           
+
+            Console.WriteLine("Username");
+            string a = Console.ReadLine();
+            Account.IsUserNameValid(a);
+
+            Console.WriteLine("Password");
+            string b = Console.ReadLine();
+            Account.IsPasswordValid(b);
+
+        }
+
+
+    }
+    public class Account
+    {
+        private static int No;
+        public string Username;
+        public string Password;
+        public int count = 1;
+
+
+
+
+
+        public Account(int no, string usrnm, string psswrd)
+        {
+            No = no;
+            Username = usrnm;
+            Password = psswrd;
+            no = count;
+            count++;
+
+            //if (IsUserNameValid(usrnm))
+            //{
+            //    this.Username = usrnm;
+            //}
+            //else
+            //{
+            //    Console.WriteLine("This username you entered does not meet the requirements ");
+            //}
+
+            //if (IsPasswordValid(psswrd))
+            //{
+            //    this.Password = psswrd;
+            //}
+            //else
+            //{
+            //    Console.WriteLine("This password you entered does not meet the requirements ");
+            //}
+
+
+            
+        }
+
+        //username yanlizca digit ve herflerden ibaret ola biler yoxlanisi
+        public static  bool IsUserNameValid(string username)
+        {
+            
+            bool usrChar = false;
+
+
+            foreach(char c in username)
+            {
+                if ((c > 32 && c < 48) || (c > 57 && c < 65))
+                {
+                    usrChar = false;
+
+                }
+               
+            }
+
+
+            if (!usrChar)
+            {
+                Console.WriteLine("Yalniz herf ve reqem");
+            }
+            return usrChar;
+        }
+
+        public static bool IsPasswordValid(string password)
+        {
+
+            bool isSymb = false;
+            bool isUpper = false;
+            bool isDigit = false;
+            bool isLength = password.Length >= 8 && password.Length <= 25;
+            foreach (var item in password)
+            {
+                if ((item>32 && item<48) || (item>57 && item<65))
+                {
+                    isSymb = true;
+                    
+                }
+               
+
+                if (Char.IsUpper(item))
+                {
+                    isUpper = true;
+                }
+                
+                if (Char.IsDigit(item))
+                {
+                    isDigit = true;
+                }
+
+               
+
+
+
+
+
+
+            }
+
+            if (isLength==false)
+            {
+                Console.WriteLine("Uzunluq 8-25 arasi olmalidir");
+            }
+            if (isSymb == false)
+            {
+                Console.WriteLine("symbol yoxdur");
+
+            }
+
+            if (isUpper == false)
+            {
+                Console.WriteLine("boyuk herf yoxdur");
+
+            }
+            if (isDigit == false)
+            {
+                Console.WriteLine("reqem yoxdur");
+            }
+
+            
+            Console.WriteLine(No);
+            return isLength && isSymb && isUpper && isDigit;
+
+
+            
+            
+
+
+        }
+    }
+      
+    }
+    
+
+
+
+
+
+                  
+
+    
+
+
+        /*
+         * 
+         * 
+ 33-й символ таблицы ASCII: !
+34-й символ таблицы ASCII: "
+35-й символ таблицы ASCII: #
+36-й символ таблицы ASCII: $
+37-й символ таблицы ASCII: %
+38-й символ таблицы ASCII: &
+39-й символ таблицы ASCII: '
+40-й символ таблицы ASCII: (
+41-й символ таблицы ASCII: )
+42-й символ таблицы ASCII: *
+43-й символ таблицы ASCII: +
+44-й символ таблицы ASCII: ,
+45-й символ таблицы ASCII: -
+46-й символ таблицы ASCII: .
+47-й символ таблицы ASCII: /
+ 
+58-й символ таблицы ASCII: :
+59-й символ таблицы ASCII: ;
+60-й символ таблицы ASCII: <
+61-й символ таблицы ASCII: =
+62-й символ таблицы ASCII: >
+63-й символ таблицы ASCII: ?
+64-й символ таблицы ASCII: @
+         * 
+48-й символ таблицы ASCII: 0
+49-й символ таблицы ASCII: 1
+50-й символ таблицы ASCII: 2
+51-й символ таблицы ASCII: 3
+52-й символ таблицы ASCII: 4
+53-й символ таблицы ASCII: 5
+54-й символ таблицы ASCII: 6
+55-й символ таблицы ASCII: 7
+56-й символ таблицы ASCII: 8
+57-й символ таблицы ASCII: 9
+
+
+65-й символ таблицы ASCII: A
+66-й символ таблицы ASCII: B
+67-й символ таблицы ASCII: C
+68-й символ таблицы ASCII: D
+69-й символ таблицы ASCII: E
+70-й символ таблицы ASCII: F
+71-й символ таблицы ASCII: G
+72-й символ таблицы ASCII: H
+73-й символ таблицы ASCII: I
+74-й символ таблицы ASCII: J
+75-й символ таблицы ASCII: K
+76-й символ таблицы ASCII: L
+77-й символ таблицы ASCII: M
+78-й символ таблицы ASCII: N
+79-й символ таблицы ASCII: O
+80-й символ таблицы ASCII: P
+81-й символ таблицы ASCII: Q
+82-й символ таблицы ASCII: R
+83-й символ таблицы ASCII: S
+84-й символ таблицы ASCII: T
+85-й символ таблицы ASCII: U
+86-й символ таблицы ASCII: V
+87-й символ таблицы ASCII: W
+88-й символ таблицы ASCII: X
+89-й символ таблицы ASCII: Y
+90-й символ таблицы ASCII: Z
+
+97-й символ таблицы ASCII: a
+98-й символ таблицы ASCII: b
+99-й символ таблицы ASCII: c
+100-й символ таблицы ASCII: d
+101-й символ таблицы ASCII: e
+102-й символ таблицы ASCII: f
+103-й символ таблицы ASCII: g
+104-й символ таблицы ASCII: h
+105-й символ таблицы ASCII: i
+106-й символ таблицы ASCII: j
+107-й символ таблицы ASCII: k
+108-й символ таблицы ASCII: l
+109-й символ таблицы ASCII: m
+110-й символ таблицы ASCII: n
+111-й символ таблицы ASCII: o
+112-й символ таблицы ASCII: p
+113-й символ таблицы ASCII: q
+114-й символ таблицы ASCII: r
+115-й символ таблицы ASCII: s
+116-й символ таблицы ASCII: t
+117-й символ таблицы ASCII: u
+118-й символ таблицы ASCII: v
+119-й символ таблицы ASCII: w
+120-й символ таблицы ASCII: x
+121-й символ таблицы ASCII: y
+122-й символ таблицы ASCII: z
+*/
+
+    
