@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>DataBase'i ASP.NET ə qoşmaq</h1>
+    <br>
+    <br>
+
+    <ul>
+        <li>
+            <h2>Visual Studio da appsettings.json faylını açmaq</h2>
+            <img src="img/apsettingjson.png" alt=""> <br>
+            <img src="img/apsettingjson2.png" alt=""> <br>
+        </li>
+
+        <li>
+            <h2>appsettings.json'da DB ilə əlaqə qurmaq</h2>
+            <ol>
+                <li>
+                    <h3>Connection'a istenilən bir ad verilir (bizdə - DefaultConnection)</h3>
+                        <p><b>"ConnectionStrings": {"DefaultConnection":}"</b></p>
+                </li>
+
+                <li>
+                  <h3>Data Source'a SQL'in yolunu yazırıq. Bunun üçün SQL-serveri açıb, Serverin property-sindən Serverin adını copy eleyib Data Source a yazırıq</h3>
+                  <p><b> "ConnectionStrings": {
+                    "DefaultConnection": "Data Source=ZALADDIN;"}</b></p><br><br>
+                    <img src="img/sql1.png" alt=""> <br>
+                    <img src="img/sql2.png" alt=""> <br>
+                    <img src="img/sql3.png" alt=""> <br>
+                </li>
+
+                
+
+                <li>
+                    <h3>DataBase-ə vermək istediyimiz adı <i>Initial Catalog'a</i> yazırıq</h3>
+                    <p><b>"ConnectionStrings": {
+                        "DefaultConnection": "Data Source=ZALADDIN; Initial Catalog=ZayDb;"}</b></p>
+                    
+                </li>
+
+                <li>
+                    <h3>Integrated Security. DataBase-in təhlükəsizliyi</h3>
+                    <p> <b> 
+                        "ConnectionStrings": { "DefaultConnection": "Data Source=ZALADDIN; Initial Catalog=ZayDb; Integrated Security = SSPI;"}
+                    </b></p>
+                    <img src="img/appsetting-sql.png" alt=""> <br>
+                </li>            
+        </ol>
+
+        </li>
+
+        <li>
+            <h2>Model papkasın da Category və Product classları yaradmaq</h2>           
+            <img src="img/class.jpg" alt=""> <br>
+            <ol>
+                <li>
+                   <h3>One-to-Many əlaqəsi qurmaq üçün <u>Product</u>  classında <u>Category</u> ilə əlaqə üçün <b> <i>CategoryId</i> </b> dəyişəni və <b> <i>Category</i> </b> tipində 
+                    Virual Category cədvəl əlavə edirik </h3>
+
+                    <img src="img/product-class.png" alt=""> <br>
+                </li>
+
+                <li>
+                    <h3><u>Category classında</u> isə çoxluqu bildirmək üçün <i>Product</i> tipində <i>Products</i> Virtual kolleksiya  yaradırıq </h3>
+                    <img src="img/category-class.png" alt=""> <br>
+                </li>
+
+             
+           
+            </ol>
+        </li>
+
+        <li>
+            <h2>Proyektin icinde <i>Data Application Layer (DAL) papkası yaradılır</i></h2>
+            <ol>               
+                <li>
+                    <h3>Bu papkanın içində yalnız <i>DBCONTEXT</i> saxlanılacaq. <br> DataBase gondərmək istədiyimiz classları(yəni Table adları) burada qeyd edəcəyik</h3>
+                    <img src="img/dbcontext1.png" alt=""> <br>
+                </li>
+                <li>
+                   <h3> <i>DAL</i> papkasının içində <i>AppDbContext</i> classı yaradıb onu <i>DbContext</i>dən törədirik</h3>                                        
+                </li>
+                <li>
+                    <h3><i>DbContext-i</i> tanınması üçün <i>using MIcrosoft.EntityFrameWorkCore</i> elemek lazımdır</h3>
+                </li>
+                <li>
+                    <h3><i>AppDbContext</i> Constructor qurulur</h3>
+                    <h3>Constructor <i>AppDbContext</i>  tipində bizdən <i>DbContextOption</i>  option alır. <br> Bu option isə base ilə göndərilir ana classa </h3>
+                </li>
+                <li>
+                    <h3>DataBase gondərmək istədiyimiz classları <i>(Category və Product)</i> DbSet ilə gondəririk</h3>
+                    <img src="img/dbcontext2.png" alt=""> <br>
+                 
+                </li>
+
+                <li>
+                    <h3>Startup.cs faylını açıb servislərə DbContexti əlavə  və DAL using edirik</h3>
+                    <img src="img/startup2.png" alt=""> <br><br>
+                    <img src="img/startup1.png" alt=""> <br>
+                </li>
+            </ol>
+        </li>
+
+        <li>
+            <h2>Packages-lərin yüklənməsi</h2>
+            <ol>
+                <li>
+                    <h3>Proyektin düzgün işləməsi üçün proyekti yazdığınız ASP.NET-in versiyasına uyğun aşağidakı Packages-ləri köçürmək lazımdır</h3>
+                    <img src="img/packages.png" alt=""> <br>
+                </li>
+                <li>
+                    <h3>Bunun üçün  <i>Tools (Средства) -> NuGet Package Manager (Диспетчер пакетов Nuget) -> Manage NuGet Packages for Solution...(Управление пакетами Nuget для решения...) </i>  daxil olub axtarış bölməsində lazım olan Package-ləri yazıb köçürürük</h3>
+                    <img src="img/Nuget.png" alt=""> <br>
+                    <img src="img/Nuget2.png" alt=""> <br>
+                </li>
+
+            </ol>
+        </li>
+
+
+        <li>
+            <h2>DataBase yaratmaq</h2>
+                <ol>
+                    <li>
+                        <h3>Yazdığımız kodu SQL-serverdə DataBase çevirmək üçün  yazdığımız kodları SQL koda çevirib SQL-serverə göndərməliyik </h3>
+                    </li>
+                    <li>
+                        <h3><i>Bunun üçün Tools (Средства) -> NuGet Package Manager (Диспетчер пакетов Nuget) -> 
+                            Package Manage Console...(Консоль диспетчера пакетов...) daxil olub add-migration yazıb migration-a ad (firstmigraton) verib ENTER basırıq </i> </h3>
+                            <p>add-migration firstmigration</p>
+                            
+                            <img src="img/NugetConsole.png" alt=""> <br>
+                            <img src="img/add-migration.png" alt=""> <br>
+                    </li>
+                    <li>
+                        <h3>Yazdığımız kodu SQL-ə çevirilməsini <i>Migrations</i> papkasında migration-u seçib SQL koda baxa bilərik </h3>
+                        <img src="img/migrations-papka.png" alt=""> <br><br>
+                        <img src="img/migrations-SQL-kod.png" alt=""> <br>
+                    </li>
+                    <li>
+                        <h3>SQL kodu isə göndərmək üçün <i>UPDATE-DATABASE</i> eliyirik</h3>
+                        <code>update-databse</code><br>
+                        <img src="img/update-database.png" alt=""> <br>
+                    </li>  
+                  
+                    <li>
+                        <h3>Artıq yazdığımız kod SQL-Serverdə <i>ZayDb</i>  adənda DataBase yaratdı </h3>
+                        <h3>Database-in C# da yaradəlmasını bilmək üçün Table-lardə <i>__EFMigrationsHistory</i> adlı table-dan bilmək olar</h3>
+                        <img src="img/SQL-server DB.png" alt=""> <br>
+                    </li>
+                </ol>           
+        </li>
+       <li>
+                <h2>Sayta Database-dən Data-ları cağırmaq</h2>
+                <ol>    
+                    <li>
+                        <h3>İlk öncə Category və Product table-ları  ikisini birdən sayta göndərmək üçün <i>ViewModels</i> 
+                            papkası, içində <i>CategoryProductsVM</i> classı yaradıb <i>ViewImports.cshtml-də</i> tanıdırıq</h3>
+                            <img src="img/ViewModels-class.png" alt=""> <br>
+                            <img src="img/ViewImports-VM.png" alt=""> <br>
+                    </li>
+                    <li>
+                        <h3><i>CategoryProductsVM </i> classında bu kodu yazırıq</h3>
+                        <code>
+                                public List<Category>  Categories { get; set; } <br>
+                                public List<Product> Products { get; set; } <br>
+                        </code> <br>
+                        <img src="img/CategoryProductsVM.png" alt=""> <br>
+                    </li>
+
+                    <li>
+                        <h3>Sonra Category və Product table-ları SQL-Serverde dolduraq</h3>
+                        <img src="img/SQL-category.png" alt="Category">
+                        <img src="img/SQL-product.png" alt=""> <br>
+                    </li>
+                    <li>
+                        <h3>Data-ları doldurduqdan sonra Index-dən cağıracayıq. Bunun üçün əvvəlcə Controller-də Contexti qoşaq və using edək</h3>
+                        <code>
+                            private readonly AppDbContext dbContext;
+                        </code> <br>
+
+                        <img src="img/controller-dbcontext.png" alt=""> <br>
+                    </li>
+                    <li>
+                        <h3>dbContexti qoşduqdan sonra <i>Constructor-da</i> qoşaq. İşarələnmiş kodu yazaq</h3>
+                        <img src="img/controller-constr-dbcontext.png" alt=""> <br>
+                    </li>
+                    <li>
+                        <h3>Və Actionda müraciət edib View-a göndərək</h3>
+                        <code>
+                            var categories = dbContext.Categories.Include(x => x.Products).ToList(); <br>
+                            var products = dbContext.Products.Where(x => x.CategoryId == 1).ToList(); <br>
+                            CategoryProductsVm vm = new CategoryProductsVm <br>
+                            { <br>
+                                Categories = categories, <br>
+                                Products = products <br>
+                            }; <br>
+                            
+                            return View(vm); <br>   
+                        </code>
+
+                        <img src="img/Controller-Action-View.png" alt=""> <br>
+                    </li>
+
+                    <li>
+                        <h3>Sayt-da göstərilməsi üçün <i>Index.cshtml</i> açıb <i>Category-ləri və Product-ları  </i> dolduraq. Və CategoryProductsVM burdada tanıdaq</h3>
+                        
+                        <p>
+                            @model CategoryProductsVm
+                        </p>
+                        <p>
+                            <div class="row">
+
+                                @foreach (var item in Model.Categories)
+                          {
+                          <div class="col-12 col-md-4 p-5 mt-3">
+                          <a href="#"><img src="~/img/@item.ImageUrl" class="rounded-circle img-fluid border"></a>
+                          <h5 class="text-center mt-3 mb-3">@item.Title</h5>
+                          <p class="text-center"><a class="btn btn-success">Go Shop</a></p>
+                          </div>
+                          } 
+                      </div>
+                    </p> <br>
+                        <p>
+                            <div class="row">
+                                @foreach(var item in Model.Products)
+                                    {                  
+                              <div class="col-12 col-md-4 mb-4">
+                                        <div class="card h-100">
+                                            <a href="shop-single.html">
+                                                <img src="~/img/@item.ImgUrl" class="card-img-top" alt="...">
+                                            </a>
+                                            <div class="card-body">        
+                                                <a href="shop-single.html" class="h2 text-decoration-none text-dark">Gym Weight</a>
+                                                <p class="text-muted">@item.Category.Title)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    }
+                        
+                                </div>
+                            </p> <br>
+
+                        <img src="img/model-CategoryVm.png" alt=""> <br>
+                        <img src="img/index-Category.png" alt=""> <br>
+                        <img src="img/index-Products.png" alt=""> <br>
+                    </li>
+                </ol>
+                
+        </li>
+
+
+    </ul>
+</body>
+</html>
